@@ -1,11 +1,13 @@
-﻿namespace Week1;
+﻿using System.Text;
+
+namespace Week1;
 
 class Program
 {
     static void Main(string[] args)
     {
         // We can initalize our object from a class, with this syntax
-        Person person = new Person();
+        Person person = new Person(); // the lowercase person is in this case our object (initalized from a class)
         DataTypeExamples examples = new DataTypeExamples();
 
         string name = "John Doe";
@@ -22,8 +24,13 @@ class Program
         char a = 'a';
         char b = '$';
         examples.CharacterValue = a;
+
+        examples.ByteValue = 0x1; // 1 byte
+
         Console.WriteLine(examples.CharacterValue + b);
-        Console.WriteLine(examples.BooleanValue);
+        Console.WriteLine(examples.BooleanValue); // false
+        Console.WriteLine(examples.ByteValue);
+
 
         // Collections and data structure examples
         // in this case, the variable holds a collection of string values, rather than a single value.
@@ -45,6 +52,19 @@ class Program
         foreach (var element in examples.ShoppingListAsList)
         {
             Console.WriteLine(element);
+        }
+
+        Dictionary<int, string> MyDict = new Dictionary<int, string>()
+        {
+            {1, "This holds the value of key 1"},
+            {2, "This holds the value of key 2"}
+        };
+
+        examples.DictionaryStructure = MyDict;
+
+        foreach (var keys in examples.DictionaryStructure)
+        {
+            Console.WriteLine(keys);
         }
     }
 }
