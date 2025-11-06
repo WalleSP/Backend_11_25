@@ -34,6 +34,8 @@ public class CLI
 
     public void DrawGraph(double x, double y)
     {
+
+
         var funcName = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
                 .Title("Choose a function to [green]plot[/]:")
@@ -66,7 +68,7 @@ public class CLI
     private static void PlotFunctions(Func<double, double> func, string title)
     {
         const int width = 100;
-        const int height = 10;
+        const int height = 50;
         const double xMinValue = -10;
         const double xMaxValue = 10;
 
