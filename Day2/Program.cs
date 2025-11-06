@@ -41,7 +41,7 @@ class Program
         void DrawCanvas()
         {
             const int width = 30; // pixel size
-            const int height = 10;
+            const int height = 15;
 
             var canvas = new Canvas(width, height);
 
