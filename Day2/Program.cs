@@ -7,6 +7,7 @@ class Program
     static void Main(string[] args)
     {
         Calculator calculator = new Calculator();
+        CLI cli = new CLI();
 
         AnsiConsole.Write(new FigletText("My Calculator CLI Application").LeftJustified().Color(Color.Aqua));
 
@@ -36,37 +37,10 @@ class Program
 
         AnsiConsole.Write(table);
 
-        // extra feature: todo: plot graph using canvas
 
-        void DrawCanvas()
-        {
-            const int width = 30; // pixel size
-            const int height = 15;
+        // Viewable commandline interface
+        cli.DrawCanvas(a);
 
-            var canvas = new Canvas(width, height);
-
-            // draw axis
-            int centerY = height / 2;
-
-            for (int x = 0; x < width; x++)
-            {
-                canvas.SetPixel(x, centerY, Color.Aqua);
-            }
-            // draw sin(x)
-            for (int x = 0; x < width; x++)
-            {
-                double radians = x * (a * Math.PI / width);
-                double yValue = Math.Sin(radians);
-                int y = centerY - (int)(yValue * (height / 2 - 1));
-
-                if (y >= 0 && y < height)
-                {
-                    canvas.SetPixel(x, y, Color.Red);
-                }
-            }
-
-            AnsiConsole.Write(canvas);
-        }
-        DrawCanvas();
+        cli.DrawGraph(a, b);
     }
 }
